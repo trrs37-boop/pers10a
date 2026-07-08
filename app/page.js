@@ -4,40 +4,6 @@ import { allQuizzes } from '@/lib/quizzes';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-import { allQuizzes } from '@/lib/quizzes';
-    id: '1',
-    title: 'Hangi Hayvan Karakteri Sensin?',
-    category: 'Kişilik',
-    description: 'Kişiliğine göre hangi hayvan karakteri olduğunu öğren!',
-    image: '🐯',
-    attempts: 1250,
-  },
-  {
-    id: '2',
-    title: 'Kariyer Yolun Hangisi?',
-    category: 'Kariyer',
-    description: 'İdeal kariyer pathini keşfet',
-    image: '💼',
-    attempts: 890,
-  },
-  {
-    id: '3',
-    title: 'Renk Testin',
-    category: 'Eğlence',
-    description: 'Favorin renge göre kişiliğini öğren',
-    image: '🎨',
-    attempts: 2100,
-  },
-  {
-    id: '4',
-    title: 'Sosyal Medya Alışkanlıkların',
-    category: 'Teknoloji',
-    description: 'Sosyal medyada hangi kullanıcı tipisin?',
-    image: '📱',
-    attempts: 1560,
-  },
-];
-
 const CATEGORIES = [
   { id: 'all', name: 'Tümü', icon: '✨' },
   { id: 'personality', name: 'Kişilik', icon: '😊' },
