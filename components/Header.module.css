@@ -1,0 +1,143 @@
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--neutral-200);
+  padding: var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-sm);
+}
+
+.header .container {
+  gap: var(--space-6);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform var(--transition-base);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logoIcon {
+  font-size: var(--text-2xl);
+}
+
+.logoText {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.navLink {
+  color: var(--neutral-700);
+  font-weight: var(--fw-medium);
+  transition: color var(--transition-base);
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.authSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  white-space: nowrap;
+}
+
+.userGreeting {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  font-weight: var(--fw-medium);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.menuToggle span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--neutral-900);
+  transition: all var(--transition-base);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .header .container {
+    position: relative;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: var(--space-4);
+    gap: var(--space-3);
+    border-bottom: 1px solid var(--neutral-200);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .authSection {
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .nav.open {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+    z-index: calc(var(--z-sticky) - 1);
+  }
+}
