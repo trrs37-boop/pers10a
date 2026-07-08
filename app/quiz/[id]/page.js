@@ -63,19 +63,19 @@ export default function QuizPage() {
     if (Object.keys(scores).length === 0) return null;
     const maxScore = Math.max(...Object.values(scores));
     const resultKey = Object.keys(scores).find((key) => scores[key] === maxScore);
-    return resultKey;
+    const resultObj = quiz.results.find((r) => r.animal === resultKey);
+    return resultObj;
   };
 
   if (quizCompleted) {
-    const resultKey = getResult();
+    const result = getResult();
     return (
       <div className={styles.quizContainer}>
         <div className={styles.resultCard}>
-          <h1 className={styles.resultTitle}>🎉 Sonucun Hazır!</h1>
+          <h1 className={styles.resultTitle}>{result?.emoji} {result?.title}</h1>
           <p className={styles.resultDescription}>
-            Senin karakterin: <strong>{resultKey}</strong>
+            {result?.description}
           </p>
-
           <div className={styles.shareButtons}>
             <button
               className="btn btn-primary"
