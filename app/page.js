@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { allQuizzes } from '@/lib/quizzes';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-const MOCK_QUIZZES = [
-  {
+import { allQuizzes } from '@/lib/quizzes';
     id: '1',
     title: 'Hangi Hayvan Karakteri Sensin?',
     category: 'Kişilik',
@@ -48,7 +47,7 @@ const CATEGORIES = [
 ];
 
 export default function Home() {
-  const [quizzes, setQuizzes] = useState(MOCK_QUIZZES);
+  const [quizzes, setQuizzes] = useState(allQuizzes);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [loading, setLoading] = useState(false);
 
@@ -59,10 +58,10 @@ export default function Home() {
     // Simüle edilmiş filtreleme
     setTimeout(() => {
       if (categoryId === 'all') {
-        setQuizzes(MOCK_QUIZZES);
+        setQuizzes(allQuizzes);
       } else {
         // Kategori filtresi yapılacak
-        setQuizzes(MOCK_QUIZZES);
+        setQuizzes(allQuizzes);
       }
       setLoading(false);
     }, 300);
