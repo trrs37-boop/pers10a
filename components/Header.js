@@ -14,7 +14,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <span className={styles.logoIcon}>✨</span>
-          <span className={styles.logoText}>Pers10a</span>
+          <span className={styles.logoText}>PERS10A</span>
         </Link>
 
         {/* Navigation */}
