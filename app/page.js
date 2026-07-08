@@ -1,0 +1,149 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styles from './page.module.css';
+
+const MOCK_QUIZZES = [
+  {
+    id: '1',
+    title: 'Hangi Hayvan Karakteri Sensin?',
+    category: 'Kişilik',
+    description: 'Kişiliğine göre hangi hayvan karakteri olduğunu öğren!',
+    image: '🐯',
+    attempts: 1250,
+  },
+  {
+    id: '2',
+    title: 'Kariyer Yolun Hangisi?',
+    category: 'Kariyer',
+    description: 'İdeal kariyer pathini keşfet',
+    image: '💼',
+    attempts: 890,
+  },
+  {
+    id: '3',
+    title: 'Renk Testin',
+    category: 'Eğlence',
+    description: 'Favorin renge göre kişiliğini öğren',
+    image: '🎨',
+    attempts: 2100,
+  },
+  {
+    id: '4',
+    title: 'Sosyal Medya Alışkanlıkların',
+    category: 'Teknoloji',
+    description: 'Sosyal medyada hangi kullanıcı tipisin?',
+    image: '📱',
+    attempts: 1560,
+  },
+];
+
+const CATEGORIES = [
+  { id: 'all', name: 'Tümü', icon: '✨' },
+  { id: 'personality', name: 'Kişilik', icon: '😊' },
+  { id: 'career', name: 'Kariyer', icon: '💼' },
+  { id: 'fun', name: 'Eğlence', icon: '🎉' },
+  { id: 'tech', name: 'Teknoloji', icon: '💻' },
+];
+
+export default function Home() {
+  const [quizzes, setQuizzes] = useState(MOCK_QUIZZES);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [loading, setLoading] = useState(false);
+
+  const handleCategoryFilter = (categoryId) => {
+    setSelectedCategory(categoryId);
+    setLoading(true);
+    
+    // Simüle edilmiş filtreleme
+    setTimeout(() => {
+      if (categoryId === 'all') {
+        setQuizzes(MOCK_QUIZZES);
+      } else {
+        // Kategori filtresi yapılacak
+        setQuizzes(MOCK_QUIZZES);
+      }
+      setLoading(false);
+    }, 300);
+  };
+
+  return (
+    <div className={styles.homepage}>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className="container">
+          <h1>Pers10a'ya Hoş Geldin!</h1>
+          <p>Eğlenceli kişilik testleriyle kendinizi keşfedin</p>
+          <Link href="#quizzes" className="btn btn-primary btn-lg">
+            Testleri Keşfet
+          </Link>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className={styles.filterSection}>
+        <div className="container">
+          <h2>Kategoriler</h2>
+          <div className={styles.categoryGrid}>
+            {CATEGORIES.map((category) => (
+              <button
+                key={category.id}
+                className={`${styles.categoryBtn} ${
+                  selectedCategory === category.id ? styles.active : ''
+                }`}
+                onClick={() => handleCategoryFilter(category.id)}
+              >
+                <span className={styles.categoryIcon}>{category.icon}</span>
+                <span>{category.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quizzes Grid */}
+      <section id="quizzes" className={styles.quizzesSection}>
+        <div className="container">
+          <h2>Popüler Testler</h2>
+          
+          {loading ? (
+            <div className={styles.loading}>Yükleniyor...</div>
+          ) : (
+            <div className={styles.quizGrid}>
+              {quizzes.map((quiz) => (
+                <div key={quiz.id} className="card">
+                  <div className={styles.quizCard}>
+                    <div className={styles.quizImage}>{quiz.image}</div>
+                    <h3>{quiz.title}</h3>
+                    <p className="text-muted">{quiz.description}</p>
+                    <div className={styles.quizFooter}>
+                      <span className={styles.category}>{quiz.category}</span>
+                      <span className={styles.attempts}>
+                        {quiz.attempts} çözüldü
+                      </span>
+                    </div>
+                    <Link href={`/quiz/${quiz.id}`} className="btn btn-primary w-full">
+                      Başla →
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <div className="container">
+          <h2>Yeni Testler Hazırlanıyor!</h2>
+          <p>Her hafta yeni eğlenceli testler ekleniyoruz</p>
+          <Link href="/auth/signup" className="btn btn-secondary btn-lg">
+            Hesap Oluştur
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
