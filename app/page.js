@@ -1,8 +1,9 @@
 'use client';
 
-import { allQuizzes } from '@/lib/quizzes';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { allQuizzes } from '@/lib/quizzes';
 
 const CATEGORIES = [
   { id: 'all', name: 'Tümü', icon: '✨' },
