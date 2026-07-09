@@ -329,3 +329,42 @@ label {
 .text-sm { font-size: var(--text-sm); }
 .text-muted { color: var(--neutral-500); }
 .font-bold { font-weight: var(--fw-bold); }
+
+/* --- HAREKETLİ ARKA PLAN KODLARI --- */
+
+/* Giriş sayfasının ana kapsayıcısı (Eğer globals.css'e ekliyorsan body tag'ine uygulayabilirsin) */
+.authContainer {
+  /* Renkleri kendi zevkine göre değiştirebilirsin. Şu an modern bir mor-mavi-pembe geçişi var */
+  background: linear-gradient(-45deg, #1e1b4b, #4c1d95, #701a75, #312e81);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  
+  /* Ekranı tam kaplaması için */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animasyonun hareket etmesini sağlayan motor */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ortadaki giriş kartının arka planın üzerinde şık durması için (Glassmorphism - Cam efekti) */
+.authCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white; /* Yazıların beyaz olması için */
+  /* Diğer padding, border-radius vs. özellikleri aynı kalabilir */
+}
