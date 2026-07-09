@@ -1,7 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { auth } from '@/lib/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import styles from '../auth.module.css';
 
 export default function LoginPage() {
@@ -9,6 +12,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
@@ -16,101 +20,69 @@ export default function LoginPage() {
     setError('');
 
     try {
-      // Firebase auth burada entegre edilecek
-      // const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log('Giriş yapılıyor:', { email, password });
-      
-      // Simüle edilmiş giriş
-      setTimeout(() => {
-        alert('Giriş başarılı!');
-        window.location.href = '/';
-      }, 1000);
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push('/'); // Başarılı girişte ana sayfaya yönlendir
     } catch (err) {
-      setError(err.message || 'Giriş başarısız oldu');
+      setError(getFirebaseError(err.code));
       setLoading(false);
     }
-  };
-
-  const handleGoogleLogin = () => {
-    setLoading(true);
-    // Firebase Google Auth burada entegre edilecek
-    console.log('Google ile giriş yapılıyor...');
-    
-    setTimeout(() => {
-      alert('Google giriş başarılı!');
-      window.location.href = '/';
-    }, 1000);
   };
 
   return (
     <div className={styles.authContainer}>
       <div className={styles.authCard}>
         <div className={styles.authHeader}>
-          <h1>Pers10a'ya Giriş Yap</h1>
-          <p>Testlerinize devam edin ve sonuçlarınızı görün</p>
+          <h1>Giriş Yap</h1>
+          <p>PERS10A dünyasına tekrar hoş geldin!</p>
         </div>
 
-        {error && <div className={styles.error}>{error}</div>}
+        {error && <div className={styles.errorAlert}>{error}</div>}
 
-        {/* Google Login */}
-        <button
-          className={styles.googleButton}
-          onClick={handleGoogleLogin}
-          disabled={loading}
-        >
-          <span>🔐</span>
-          Google ile Giriş Yap
-        </button>
-
-        {/* Divider */}
-        <div className={styles.divider}>
-          <span>veya</span>
-        </div>
-
-        {/* Email Login Form */}
-        <form onSubmit={handleEmailLogin}>
-          <div className="form-group">
+        <form onSubmit={handleEmailLogin} className={styles.authForm}>
+          <div className={styles.formGroup}>
             <label htmlFor="email">E-posta</label>
             <input
-              id="email"
               type="email"
-              placeholder="ornek@email.com"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-posta adresin"
               required
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.formGroup}>
             <label htmlFor="password">Şifre</label>
             <input
-              id="password"
               type="password"
-              placeholder="••••••••"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Şifren"
               required
             />
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary w-full"
-            disabled={loading}
-          >
+          <button type="submit" className={styles.submitBtn} disabled={loading}>
             {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
           </button>
         </form>
 
-        {/* Links */}
         <div className={styles.authFooter}>
-          <Link href="/auth/forgot-password">Şifreni mi unuttun?</Link>
-          <p>
-            Hesabın yok mu?{' '}
-            <Link href="/auth/signup">Kayıt ol</Link>
-          </p>
+          <p>Hesabın yok mu? <Link href="/auth/signup">Kayıt Ol</Link></p>
         </div>
       </div>
     </div>
   );
+}
+
+function getFirebaseError(code) {
+  const errors = {
+    'auth/user-not-found': 'Bu e-posta ile kayıtlı hesap bulunamadı.',
+    'auth/wrong-password': 'Şifre yanlış.',
+    'auth/invalid-email': 'Geçersiz e-posta adresi.',
+    'auth/invalid-credential': 'E-posta veya şifre hatalı.',
+    'auth/too-many-requests': 'Çok fazla deneme. Lütfen biraz bekleyin.',
+  };
+  return errors[code] || 'Bir hata oluştu. Lütfen tekrar deneyin.';
 }
