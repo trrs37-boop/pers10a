@@ -107,9 +107,13 @@ body {
   font-size: var(--text-base);
   line-height: var(--lh-normal);
   color: var(--neutral-900);
-  background-color: var(--neutral-50);
+  background: linear-gradient(-45deg, #f3e8ff, #e0e7ff, #fae8ff, #ede9fe);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   /* Ekranın tamamını kaplaması için */
+  min-height: 100vh; 
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -332,20 +336,6 @@ label {
 
 /* --- HAREKETLİ ARKA PLAN KODLARI --- */
 
-/* Giriş sayfasının ana kapsayıcısı (Eğer globals.css'e ekliyorsan body tag'ine uygulayabilirsin) */
-.authContainer {
-  /* Renkleri kendi zevkine göre değiştirebilirsin. Şu an modern bir mor-mavi-pembe geçişi var */
-  background: linear-gradient(-45deg, #1e1b4b, #4c1d95, #701a75, #312e81);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-  
-  /* Ekranı tam kaplaması için */
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Animasyonun hareket etmesini sağlayan motor */
 @keyframes gradientMove {
   0% {
@@ -359,12 +349,3 @@ label {
   }
 }
 
-/* Ortadaki giriş kartının arka planın üzerinde şık durması için (Glassmorphism - Cam efekti) */
-.authCard {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white; /* Yazıların beyaz olması için */
-  /* Diğer padding, border-radius vs. özellikleri aynı kalabilir */
-}
