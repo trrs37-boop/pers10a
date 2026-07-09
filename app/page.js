@@ -39,7 +39,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
-          <h1>Pers10a'ya Hoş Geldin!</h1>
+          <h1>PERS10A'ya Hoş Geldin!</h1>
           <p>Eğlenceli kişilik testleriyle kendinizi keşfedin</p>
           <Link href="#quizzes" className="btn btn-primary btn-lg">
             Testleri Keşfet
@@ -104,7 +104,7 @@ export default function Home() {
       <section className={styles.ctaSection}>
         <div className="container">
           <h2>Yeni Testler Hazırlanıyor!</h2>
-          <p>Her hafta yeni eğlenceli testler ekleniyoruz</p>
+          <p>Her gün yeni test ekleniyor!</p>
           <Link href="/auth/signup" className="btn btn-secondary btn-lg">
             Hesap Oluştur
           </Link>
