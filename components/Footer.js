@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import Newsletter from './Newsletter';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -44,26 +45,17 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className={styles.footerSection}>
-            <h4>Bültene Abone Ol</h4>
-            <p className="text-sm">Yeni testler hakkında ilk öğren.</p>
-            <div className={styles.newsletter}>
-              <input
-                type="email"
-                placeholder="E-postanı gir"
-                aria-label="E-posta adresi"
-              />
-              <button className="btn btn-primary btn-sm">Abone Ol</button>
-            </div>
+             <Newsletter />
           </div>
         </div>
 
         {/* Bottom */}
         <div className={styles.footerBottom}>
           <p>
-            © {currentYear} Pers10a. Tüm hakları saklıdır.
+            © {currentYear} PERS10A. Tüm hakları saklıdır.
           </p>
           <p className="text-muted">
-            Made with ❤️ using Next.js + Firebase
+            Azim ve inanç ile üretildi.
           </p>
         </div>
       </div>
