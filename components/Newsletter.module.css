@@ -1,0 +1,17 @@
+.newsletter { display: flex; flex-direction: column; gap: 0.5rem; }
+.newsletter h4 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.newsletter p { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+.form { display: flex; gap: 0.5rem; }
+.form input {
+  flex: 1; padding: 0.75rem 1rem; border: 1px solid #ddd;
+  border-radius: 8px; font-size: 0.9rem;
+}
+.form button {
+  padding: 0.75rem 1.25rem; background-color: var(--primary-color, #6366f1);
+  color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+}
+.form button:hover:not(:disabled) { opacity: 0.9; }
+.form button:disabled { opacity: 0.7; cursor: not-allowed; }
+.message { font-size: 0.85rem; margin-top: 0.5rem; }
+.success { color: #10b981; }
+.error { color: #ef4444; }
