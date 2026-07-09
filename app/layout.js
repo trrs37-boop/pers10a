@@ -1,10 +1,11 @@
-import './globals.css';
+import { AuthProvider } from '@/lib/authContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import './globals.css';
 
 export const metadata = {
-  title: 'Pers10a - Kişilik Testi Platformu',
-  description: 'Buzzfeed tarzı eğlenceli kişilik testleri. Testleri çöz, sonucunu öğren, paylaş!',
+  title: 'PERS10A - Kişilik Testi Platformu',
+  description: 'Eğlenceli ve düşündürücü kişilik testleri. Testleri çöz, sonucunu öğren, paylaş!',
   keywords: 'kişilik testi, quiz, eğlence, karakter analizi',
   viewport: 'width=device-width, initial-scale=1.0',
   charset: 'UTF-8',
@@ -13,15 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <head>
-        <meta charSet="utf-8" />
-      </head>
       <body>
-        <Header />
-        <main style={{ minHeight: '100vh' }}>
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
