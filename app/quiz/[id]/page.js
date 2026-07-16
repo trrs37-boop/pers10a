@@ -69,6 +69,13 @@ export default function QuizPage() {
 
   if (quizCompleted) {
     const result = getResult();
+    const result = getResult();
+
+useEffect(() => {
+  incrementSolvedCount(quizId); // quizId'yi parametrelerden al
+}, []);
+
+return (
     return (
       <div className={styles.quizContainer}>
         <div className={styles.resultCard}>
