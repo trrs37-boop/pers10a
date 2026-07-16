@@ -23,7 +23,11 @@ useEffect(() => {
   const [scores, setScores] = useState({});
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-
+useEffect(() => {
+  if (quiz) {
+    incrementSolvedCount(quizId);
+  }
+}, [quiz, quizId]);
   // Quiz bulunamazsa hata göster
   if (!quiz) {
     return (
@@ -75,10 +79,6 @@ useEffect(() => {
 
   if (quizCompleted) {
     const result = getResult()
-
-useEffect(() => {
-  incrementSolvedCount(quizId); // quizId'yi parametrelerden al
-}, []);
 
 return (
       <div className={styles.quizContainer}>
