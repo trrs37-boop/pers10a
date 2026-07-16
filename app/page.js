@@ -32,9 +32,13 @@ export default function Home() {
       } else {
         const categoryMap = {
           personality: 'Kişilik',
-          career: 'Kariyer',
+          politics: 'Siyaset',
           fun: 'Eğlence',
-          tech: 'Teknoloji'
+          love: 'İlişkiler',
+          history: 'Tarih',
+          sport: 'Spor',
+          mystery: 'Gizem',
+          astro: 'Astroloji'
         };
         const filtered = allQuizzes.filter(quiz => quiz.category === categoryMap[categoryId]);
         setQuizzes(filtered);
