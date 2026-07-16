@@ -10,20 +10,8 @@ export default function RootLayout({ children }) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', process.env.NEXT_PUBLIC_GA_ID=G-7JEM3TM7LF);
   }, []);
 
-  return (
-    <html>
-      <head>
-        <script 
-          async 
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
-  );
 }
 export const metadata = {
   title: 'PERS10A - Kişilik Testi Platformu',
