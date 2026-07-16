@@ -8,9 +8,13 @@ import { allQuizzes } from '@/lib/quizzes';
 const CATEGORIES = [
   { id: 'all', name: 'Tümü', icon: '✨' },
   { id: 'personality', name: 'Kişilik', icon: '😊' },
-  { id: 'career', name: 'Kariyer', icon: '💼' },
+  { id: 'politics', name: 'Siyaset', icon: '💼' },
   { id: 'fun', name: 'Eğlence', icon: '🎉' },
-  { id: 'tech', name: 'Teknoloji', icon: '💻' },
+  { id: 'love', name: 'İlişkiler', icon: '❤️' },
+  { id: 'history', name: 'Tarih', icon: '📜' },
+  { id: 'sport', name: 'Spor', icon: '⚽' },
+  { id: 'mystery', name: 'Gizem', icon: '🔍' },
+  { id: 'astro', name: 'Astroloji', icon: '🔮' },
 ];
 
 export default function Home() {
