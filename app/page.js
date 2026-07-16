@@ -97,7 +97,6 @@ export default function Home() {
                     <div className={styles.quizFooter}>
                       <span className={styles.category}>{quiz.category}</span>
                       <span className={styles.attempts}>
-                        {quiz.attempts} çözüldü
                       </span>
                     </div>
                     <Link href={`/quiz/${quiz.id}`} className="btn btn-primary w-full">
