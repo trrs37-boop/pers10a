@@ -93,8 +93,17 @@ return (
              onClick={() => {
   const shareUrl = window.location.href;
   const shareText = `${result?.emoji} ${result?.title}\n${result?.description}\n\n${shareUrl}`;
-  navigator.clipboard.writeText(shareText);
-  alert('Sonuç kopyalandı!');
+  
+  if (navigator.share) {
+    navigator.share({
+      title: result?.title,
+      text: shareText,
+      url: shareUrl
+    });
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert('Sonuç kopyalandı!');
+  }
 }}
             >
               🔗 Sonucu Paylaş
