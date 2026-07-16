@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa'
 export default function Iletisim() {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,7 +15,6 @@ export default function Iletisim() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simüle edilmiş gönderim
     setTimeout(() => {
       setIsSubmitting(false)
       setIsSubmitted(true)
@@ -27,7 +25,6 @@ export default function Iletisim() {
   return (
     <div className="contact-page">
       <div className="container">
-        {/* Başlık Alanı */}
         <div className="contact-hero">
           <h1>İletişim</h1>
           <p className="contact-subtitle">
@@ -35,12 +32,9 @@ export default function Iletisim() {
           </p>
         </div>
         <div className="contact-grid">
-          {/* İletişim Bilgileri */}
           <div className="contact-info-section">
             <div className="contact-card">
-              <div className="contact-card-icon">
-                <FaEnvelope />
-              </div>
+              <div className="contact-card-icon">✉️</div>
               <h3>E-posta</h3>
               <p className="contact-card-text">
                 Bize doğrudan e-posta gönderin
@@ -50,9 +44,7 @@ export default function Iletisim() {
               </a>
             </div>
             <div className="contact-card">
-              <div className="contact-card-icon">
-                <FaMapMarkerAlt />
-              </div>
+              <div className="contact-card-icon">📍</div>
               <h3>Konum</h3>
               <p className="contact-card-text">
                 Türkiye
@@ -64,13 +56,12 @@ export default function Iletisim() {
               </p>
             </div>
           </div>
-          {/* İletişim Formu */}
           <div className="contact-form-section">
             <div className="contact-form-card">
               <h2>Bize Yazın</h2>
               {isSubmitted && (
                 <div className="contact-success">
-                  <FaCheckCircle className="success-icon" />
+                  <span className="success-icon">✅</span>
                   <p>Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</p>
                 </div>
               )}
@@ -130,17 +121,7 @@ export default function Iletisim() {
                   className="btn btn-primary contact-submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <span className="spinner"></span>
-                      Gönderiliyor...
-                    </>
-                  ) : (
-                    <>
-                      <FaPaperPlane />
-                      Mesaj Gönder
-                    </>
-                  )}
+                  {isSubmitting ? 'Gönderiliyor...' : '📨 Mesaj Gönder'}
                 </button>
               </form>
             </div>
@@ -177,7 +158,6 @@ export default function Iletisim() {
           gap: 2.5rem;
           align-items: start;
         }
-        /* === İletişim Bilgi Kartları === */
         .contact-info-section {
           display: flex;
           flex-direction: column;
@@ -196,16 +176,8 @@ export default function Iletisim() {
           box-shadow: var(--shadow-lg);
         }
         .contact-card-icon {
-          width: 48px;
-          height: 48px;
-          border-radius: var(--radius-lg);
-          background: linear-gradient(135deg, var(--primary), var(--primary-light));
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.25rem;
-          margin-bottom: 1rem;
+          font-size: 2rem;
+          margin-bottom: 0.75rem;
         }
         .contact-card h3 {
           font-size: 1.1rem;
@@ -241,7 +213,6 @@ export default function Iletisim() {
           color: var(--neutral-600);
           margin: 0;
         }
-        /* === İletişim Formu === */
         .contact-form-card {
           background: rgba(255, 255, 255, 0.75);
           backdrop-filter: blur(16px);
@@ -322,19 +293,6 @@ export default function Iletisim() {
           opacity: 0.7;
           cursor: not-allowed;
         }
-        /* Spinner */
-        .spinner {
-          width: 18px;
-          height: 18px;
-          border: 2px solid rgba(255, 255, 255, 0.3);
-          border-top-color: white;
-          border-radius: 50%;
-          animation: spin 0.6s linear infinite;
-        }
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-        /* Başarı mesajı */
         .contact-success {
           display: flex;
           align-items: center;
@@ -347,7 +305,6 @@ export default function Iletisim() {
           animation: fadeIn 0.3s ease;
         }
         .success-icon {
-          color: var(--success);
           font-size: 1.25rem;
           flex-shrink: 0;
         }
@@ -361,7 +318,6 @@ export default function Iletisim() {
           from { opacity: 0; transform: translateY(-8px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        /* === Responsive === */
         @media (max-width: 768px) {
           .contact-grid {
             grid-template-columns: 1fr;
