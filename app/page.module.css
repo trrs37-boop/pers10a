@@ -26,8 +26,9 @@
 /* Filter Section */
 .filterSection {
   padding: var(--space-12) var(--space-4);
-  background-color: white;
-  border-bottom: 1px solid var(--neutral-200);
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .filterSection h2 {
