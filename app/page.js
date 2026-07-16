@@ -22,13 +22,18 @@ export default function Home() {
     setSelectedCategory(categoryId);
     setLoading(true);
     
-    // Simüle edilmiş filtreleme
     setTimeout(() => {
       if (categoryId === 'all') {
         setQuizzes(allQuizzes);
       } else {
-        // Kategori filtresi yapılacak
-        setQuizzes(allQuizzes);
+        const categoryMap = {
+          personality: 'Kişilik',
+          career: 'Kariyer',
+          fun: 'Eğlence',
+          tech: 'Teknoloji'
+        };
+        const filtered = allQuizzes.filter(quiz => quiz.category === categoryMap[categoryId]);
+        setQuizzes(filtered);
       }
       setLoading(false);
     }, 300);
