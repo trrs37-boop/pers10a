@@ -32,8 +32,8 @@ export default function Header() {
             </div>
           ) : (
             <>
-              <Link href="/auth/login" className={styles.loginBtn}>Giriş Yap</Link>
-              <Link href="/auth/signup" className={styles.signupBtn}>Kayıt Ol</Link>
+              <Link href="/auth/login" className={styles.loginBtn}> Giriş Yap </Link>
+              <Link href="/auth/signup" className={styles.signupBtn}> Kayıt Ol </Link>
             </>
           )}
         </div>
