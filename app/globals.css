@@ -109,10 +109,10 @@ body {
   color: var(--neutral-900);
   background: linear-gradient(-45deg, #f3e8ff, #e0e7ff, #fae8ff, #ede9fe);
   background-size: 400% 400%;
+  background-attachment: fixed;
   animation: gradientMove 15s ease infinite;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   /* Ekranın tamamını kaplaması için */
   min-height: 100vh; 
 }
 
@@ -350,4 +350,3 @@ label {
     background-position: 0% 50%;
   }
 }
-
