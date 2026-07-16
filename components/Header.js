@@ -19,7 +19,7 @@ export default function Header() {
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
           <Link href="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Ana Sayfa</Link>
-          <Link href="/quiz" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Testler</Link>
+          <Link href="/quiz" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>  </Link>
         </nav>
 
         <div className={styles.authButtons}>
