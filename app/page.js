@@ -7,9 +7,8 @@ import { allQuizzes } from '@/lib/quizzes';
 
 const CATEGORIES = [
   { id: 'all', name: 'Tümü', icon: '✨' },
-  { id: 'personality', name: 'Kişilik', icon: '😊' },
-  { id: 'politics', name: 'Siyaset', icon: '💼' },
   { id: 'fun', name: 'Eğlence', icon: '🎉' },
+  { id: 'politics', name: 'Siyaset', icon: '💼' },
   { id: 'love', name: 'İlişkiler', icon: '❤️' },
   { id: 'history', name: 'Tarih', icon: '📜' },
   { id: 'sport', name: 'Spor', icon: '⚽' },
@@ -31,9 +30,8 @@ export default function Home() {
         setQuizzes(allQuizzes);
       } else {
         const categoryMap = {
-          personality: 'Kişilik',
-          politics: 'Siyaset',
           fun: 'Eğlence',
+          politics: 'Siyaset',
           love: 'İlişkiler',
           history: 'Tarih',
           sport: 'Spor',
