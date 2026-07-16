@@ -1,108 +1,108 @@
 export const quizData = {
   id: "food-animal",
-  title: "Sevdiğin Yemeklere Göre Hangi Hayvan Çıkacaksın?",
-  description: "Yemek seçimlerin seni hangi hayvana benzetecek? Öğren!",
+  title: "Sevdiğin Yemeklere Göre Önceki Hayatında Hangi Hayvandın?",
+  description: "Yemek seçimlerin seni hangi hayvana benzetecek?",
   category: "Kişilik",
   image: "🍔",
   questions: [
     {
       id: 1,
-      text: "Akşam yemeğine ne yemek istersin?",
+      text: "İş çıkışı bir akşam yemeğine gidiyorsun. Restoranda hangi yemeği sipariş ederdin?",
       answers: [
-        { text: "Sushi - balık ve çiğ yiyecekler", points: { Kartal: 2, Köpek: 1 } },
-        { text: "Pizza - pratik ve lezzetli", points: { Köpek: 3, Kelebek: 1 } },
-        { text: "Salata - sağlıklı seçim", points: { Panda: 3, Kelebek: 1 } },
-        { text: "Et kızartması - ağır ve doyurucu", points: { Kartal: 3, Köpek: 1 } }
+        { text: "Sushi", points: { Kartal: 2, Köpek: 1 } },
+        { text: "Pizza", points: { Köpek: 3, Kelebek: 1 } },
+        { text: "Diyet salata", points: { Panda: 3, Kelebek: 1 } },
+        { text: "Döner", points: { Kartal: 3, Köpek: 1 } }
       ]
     },
     {
       id: 2,
       text: "Kahvaltıda hangisini tercih edersin?",
       answers: [
-        { text: "Sadece kahve ve ekmek", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Tam bir İngiliz kahvaltısı", points: { Panda: 2, Köpek: 2 } },
+        { text: "Kahve ve kruvasan", points: { Kedi: 3, Kelebek: 1 } },
+        { text: "Menemen", points: { Panda: 2, Köpek: 2 } },
         { text: "Pancake ve reçel", points: { Köpek: 3, Kelebek: 1 } },
-        { text: "Protein ağırlıklı - yumurta, et", points: { Kartal: 3, Köpek: 1 } }
+        { text: "Sucuklu yumurta", points: { Kartal: 3, Köpek: 1 } }
       ]
     },
     {
       id: 3,
-      text: "Hangisi senin ideal atıştırmalık?",
+      text: "Hangisi senin için ideal atıştırmalık?",
       answers: [
-        { text: "Çikolata - rafine ve lezzetli", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Cips ve popcorn - sosyal atıştırmalık", points: { Köpek: 3, Kelebek: 1 } },
-        { text: "Meyve - doğal ve sağlıklı", points: { Panda: 3, Kelebek: 2 } },
-        { text: "Fındık ve enerji barı", points: { Kartal: 3, Panda: 1 } }
+        { text: "Çikolata", points: { Kedi: 3, Kelebek: 1 } },
+        { text: "Cips ve patlamış mısır", points: { Köpek: 3, Kelebek: 1 } },
+        { text: "Kurutulmuş meyveler", points: { Panda: 3, Kelebek: 2 } },
+        { text: "Fındık, kaju gibi çerezler", points: { Kartal: 3, Panda: 1 } }
       ]
     },
     {
       id: 4,
-      text: "Restoranda yeni bir yemeğe cesaret eder misin?",
+      text: "İlk kez gittiğin bir restoranda yeni bir yemek denemeye cesaret edebilir misin?",
       answers: [
-        { text: "Her zaman, heyecan verici! ⚡", points: { Kartal: 3, Köpek: 2 } },
+        { text: "Her zaman, bu heyecan verici bir deneyim", points: { Kartal: 3, Köpek: 2 } },
         { text: "Evet ama güvenli seçeneklerle", points: { Köpek: 3, Panda: 1 } },
-        { text: "Sadece tanıdıklarımı yem", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Tercihim var ama açık fikirli", points: { Panda: 2, Kelebek: 2 } }
+        { text: "Sadece bildiğim yemekleri yerim", points: { Kedi: 3, Kelebek: 1 } },
+        { text: "Tercihlerim önceliklidir ama ruh halime göre yeni bir şey de deneyebilirim", points: { Panda: 2, Kelebek: 2 } }
       ]
     },
     {
       id: 5,
-      text: "Yemekten sonraki ideal saatler?",
+      text: "Yemekten sonra neler yapmayı seversin?",
       answers: [
-        { text: "Hemen sosyalleş ve eğlen", points: { Köpek: 3, Kelebek: 1 } },
-        { text: "Sakin bir ortamda konuş", points: { Panda: 3, Kelebek: 1 } },
-        { text: "Kendi başına rahatlama zamanı", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Sonraki işime hazırlan", points: { Kartal: 3, Köpek: 1 } }
+        { text: "Arkadaşlarımla sosyalleşmeyi", points: { Köpek: 3, Kelebek: 1 } },
+        { text: "Sakin bir ortamda sevdiklerimle vakit geçirmeyi", points: { Panda: 3, Kelebek: 1 } },
+        { text: "Kendi başıma dinlenmeyi", points: { Kedi: 3, Kelebek: 1 } },
+        { text: "Sonraki işime hazırlanmayı", points: { Kartal: 3, Köpek: 1 } }
       ]
     },
     {
       id: 6,
       text: "Acı yemekler hakkında ne düşünürsün?",
       answers: [
-        { text: "Aşırı seviyorum, çok acı isteyelim", points: { Kartal: 3, Köpek: 1 } },
-        { text: "Orta seviyede hoş", points: { Köpek: 3, Panda: 1 } },
+        { text: "Aşırı seviyorum, ben zaten her acının tiryakisi olmuşum", points: { Kartal: 3, Köpek: 1 } },
+        { text: "Orta seviyede olabilir", points: { Köpek: 3, Panda: 1 } },
         { text: "Az bir dokunuş yeterli", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Hiç tercih etmem, ılık ve yumuşak", points: { Panda: 3, Kelebek: 1 } }
+        { text: "Hiç tercih etmem, acıdan hoşlanmam", points: { Panda: 3, Kelebek: 1 } }
       ]
     },
     {
       id: 7,
-      text: "Diyete başladığında ilk günü nasıl geçirir?",
+      text: "Diyete başladığında ilk günü nasıl geçiyor?",
       answers: [
-        { text: "Katı disiplinle başlarım", points: { Kartal: 3, Kedi: 1 } },
-        { text: "Sabrıyla devam ederim", points: { Panda: 3, Kedi: 1 } },
-        { text: "Sosyal baskıya dayanamam", points: { Köpek: 3, Kelebek: 1 } },
-        { text: "Esnek olarak uyarlarım", points: { Kelebek: 3, Panda: 1 } }
+        { text: "Katı disiplinle, tavizsiz", points: { Kartal: 3, Kedi: 1 } },
+        { text: "Geçmek bilmiyor", points: { Panda: 3, Kedi: 1 } },
+        { text: "Diyetim ilk günden bozuluyor", points: { Köpek: 3, Kelebek: 1 } },
+        { text: "Esnek bir biçimde uyguladığım için sorun olmuyor", points: { Kelebek: 3, Panda: 1 } }
       ]
     },
     {
       id: 8,
-      text: "Aile yemeğinde senin rolün?",
+      text: "Aile yemeğinde senin rolün nedir?",
       answers: [
-        { text: "Merkezdeyim, herkese danışılıyor", points: { Kartal: 3, Köpek: 1 } },
-        { text: "Herkesin yararını düşünür seçer yaparım", points: { Panda: 3, Kelebek: 1 } },
-        { text: "Sessizce otururum, sadece dinlerim", points: { Kedi: 3, Kelebek: 1 } },
-        { text: "Herkese hitap eden fikir sunurum", points: { Köpek: 3, Panda: 1 } }
+        { text: "Merkezdeyim, herkes benimle aktif iletişim içindedir", points: { Kartal: 3, Köpek: 1 } },
+        { text: "Herkesin gönlünü hoş etmek için çabalarım", points: { Panda: 3, Kelebek: 1 } },
+        { text: "Sessizce oturup yemeğimi yerim", points: { Kedi: 3, Kelebek: 1 } },
+        { text: "Herkese hitap eden hikayeler anlatırım", points: { Köpek: 3, Panda: 1 } }
       ]
     },
     {
       id: 9,
-      text: "Yemeği nasıl hazırlamayı seversin?",
+      text: "İşten eve geldiğinde yemeğini nasıl hazırlamayı seversin?",
       answers: [
         { text: "Hızlı ve verimli bir şekilde", points: { Kartal: 3, Köpek: 1 } },
         { text: "Adım adım, titizce", points: { Panda: 3, Kedi: 1 } },
         { text: "Yaratıcı ve farklı yollarla", points: { Kelebek: 3, Köpek: 1 } },
-        { text: "En az çabamla lezzetli çıksın", points: { Kedi: 3, Kelebek: 1 } }
+        { text: "En az çabayla", points: { Kedi: 3, Kelebek: 1 } }
       ]
     },
     {
       id: 10,
-      text: "Bütçe kısıtlı olduğunda ne yaparsın?",
+      text: "Yemek için bütçen kısıtlı olduğunda ne yaparsın?",
       answers: [
         { text: "Yine de kaliteden taviz vermem", points: { Kedi: 3, Kartal: 1 } },
-        { text: "Dengeli çözüm bulurum", points: { Panda: 3, Kelebek: 1 } },
+        { text: "Dengeli bir orta yol bulurum", points: { Panda: 3, Kelebek: 1 } },
         { text: "Yaratıcı kombinasyonlar denerim", points: { Kelebek: 3, Köpek: 1 } },
-        { text: "Herkesin bulacağı bir yol bulurum", points: { Köpek: 3, Panda: 1 } }
+        { text: "Çok kafaya takmam karnım doysun yeter", points: { Köpek: 3, Panda: 1 } }
       ]
     }
   ],
@@ -117,13 +117,13 @@ export const quizData = {
       animal: "Köpek",
       emoji: "🐕",
       title: "Sen bir KÖPEKSİN!",
-      description: "Sosyal, canlı ve vefalı bir yapın var. Yemekleri insanlarla paylaşmaktan keyif alırsın. Herkesin mutluluğunu düşünür, esneksin ve uyumlusun. Çevrenden istediğini elde etmesini bilirsin ve herkes seni sever. 😊"
+      description: "Sosyal, canlı ve vefalı bir yapın var. Yemekleri diğer insanlarla paylaşmaktan keyif alırsın. Herkesin mutluluğunu düşünürsün, esnek ve uyumlusun. Çevrenden istediğini elde etmesini bilirsin ve herkes seni sever. 😊"
     },
     {
       animal: "Kedi",
       emoji: "🐱",
       title: "Sen bir KEDİSİN!",
-      description: "Seçici, bağımsız ve biraz gizli bir yapın var. Yemek söz konusu olunca kaliteden taviz vermezsin. Kendi kurallarınla yaşarsın ve insanlar seni anlamaya çalışır. Gizli bir çekiciliğin var ve kendine güvenlisin. 😼"
+      description: "Seçici, bağımsız ve biraz gizemli bir yapın var. Yemek söz konusu olunca kaliteden taviz vermezsin. Kendi kurallarınla yaşarsın ve insanlar seni anlamaya çalışır. Gizli bir çekiciliğin var ve kendine güvenlisin. 😼"
     },
     {
       animal: "Kartal",
@@ -135,7 +135,7 @@ export const quizData = {
       animal: "Kelebek",
       emoji: "🦋",
       title: "Sen bir KELEBEKSİN!",
-      description: "Hafif, girift ve çok taraflı bir yapın var. Yaşamın her alanında esnekliği seversin ve monotonluğu sevmezsin. Yemekten hayata her şeyde değişkenlikleri tercih edersin. Ruh halinde hızlı değişimler yaşarsın ama bu seni ilginç kılar. ✨"
+      description: "Hafif, karmaşık ve çok yönlü bir yapın var. Yaşamın her alanında esnekliği seversin ve monotonluğu sevmezsin. Yemekten hayata her şeyde değişkenlikleri tercih edersin. Ruh halinde hızlı değişimler yaşarsın ama bu seni ilginç kılar. ✨"
     }
   ]
 };
