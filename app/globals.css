@@ -100,6 +100,11 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  background: linear-gradient(-45deg, #f3e8ff, #e0e7ff, #fae8ff, #ede9fe);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradientMove 15s ease infinite;
 }
 
 body {
@@ -107,13 +112,9 @@ body {
   font-size: var(--text-base);
   line-height: var(--lh-normal);
   color: var(--neutral-900);
-  background: linear-gradient(-45deg, #f3e8ff, #e0e7ff, #fae8ff, #ede9fe);
-  background-size: 400% 400%;
-  background-attachment: fixed;
-  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh; 
 }
 
 /* ===== TYPOGRAPHY ===== */
