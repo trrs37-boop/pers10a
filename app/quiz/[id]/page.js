@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+import { incrementSolvedCount } from '@/lib/firebase';
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import styles from './quiz.module.css';
@@ -12,7 +14,11 @@ export default function QuizPage() {
 
   // lib/quizzes.js'den ilgili quizi bul
   const quiz = allQuizzes.find((q) => q.id === quizId);
-
+useEffect(() => {
+  if (quiz) {
+    incrementSolvedCount(quizId);
+  }
+}, [quiz, quizId]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState({});
   const [quizCompleted, setQuizCompleted] = useState(false);
