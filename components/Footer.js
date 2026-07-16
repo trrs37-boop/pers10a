@@ -27,8 +27,8 @@ export default function Footer() {
             <h4>Linkler</h4>
             <ul>
               <li><Link href="/">Anasayfa</Link></li>
-              <li><Link href="/about">Hakkında</Link></li>
-              <li><Link href="/contact">İletişim</Link></li>
+              <li><Link href="/hakkinda">Hakkında</Link></li>
+              <li><Link href="/iletisim">İletişim</Link></li>
             </ul>
           </div>
 
