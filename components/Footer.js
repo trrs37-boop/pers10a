@@ -27,7 +27,6 @@ export default function Footer() {
             <h4>Linkler</h4>
             <ul>
               <li><Link href="/">Anasayfa</Link></li>
-              <li><Link href="/#quizzes">Testler</Link></li>
               <li><Link href="/about">Hakkında</Link></li>
               <li><Link href="/contact">İletişim</Link></li>
             </ul>
@@ -38,8 +37,6 @@ export default function Footer() {
             <h4>Yasal</h4>
             <ul>
               <li><Link href="/privacy">Gizlilik Politikası</Link></li>
-              <li><Link href="/terms">Kullanım Şartları</Link></li>
-              <li><Link href="/cookies">Çerez Politikası</Link></li>
             </ul>
           </div>
 
