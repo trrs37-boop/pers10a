@@ -79,7 +79,11 @@ export default function QuizPage() {
           <div className={styles.shareButtons}>
             <button
               className="btn btn-primary"
-              onClick={() => alert('Paylaş!')}
+              onClick={() => {
+  const shareUrl = window.location.href;
+  navigator.clipboard.writeText(shareUrl);
+  alert('Sonuç kopyalandı! Paylaşabilirsin!');
+}}
             >
               🔗 Sonucu Paylaş
             </button>
