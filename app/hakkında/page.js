@@ -1,9 +1,7 @@
-import { FaBrain, FaFlask, FaUsers, FaShieldAlt, FaChartLine, FaHeart } from 'react-icons/fa'
 export default function Hakkinda() {
   return (
     <div className="about-page">
       <div className="container">
-        {/* Hero Bölümü */}
         <section className="about-hero">
           <div className="about-hero-badge">Hakkımızda</div>
           <h1>Kendinizi Keşfetmenin <br />En Bilimsel Yolu</h1>
@@ -13,12 +11,9 @@ export default function Hakkinda() {
             psikoloji alanındaki güncel araştırmalara dayanmaktadır.
           </p>
         </section>
-        {/* Misyon & Vizyon */}
         <section className="about-mission-grid">
           <div className="about-mission-card">
-            <div className="about-mission-icon mission-icon-purple">
-              <FaHeart />
-            </div>
+            <div className="about-mission-icon mission-icon-purple">💜</div>
             <h2>Misyonumuz</h2>
             <p>
               İnsanların kişilik özelliklerini, güçlü yanlarını ve gelişim alanlarını 
@@ -27,24 +22,19 @@ export default function Hakkinda() {
             </p>
           </div>
           <div className="about-mission-card">
-            <div className="about-mission-icon mission-icon-pink">
-              <FaChartLine />
-            </div>
+            <div className="about-mission-icon mission-icon-pink">📈</div>
             <h2>Vizyonumuz</h2>
             <p>
               Herkesin kendini tanıma yolculuğunda güvenle başvurabileceği, 
-              Türkiye'nin önde gelen kişilik analizi platformu olmak.
+              Türkiye&#39;nin önde gelen kişilik analizi platformu olmak.
             </p>
           </div>
         </section>
-        {/* Neden Biz */}
         <section className="about-features">
           <h2 className="about-section-title">Neden Bizi Tercih Etmelisiniz?</h2>
           <div className="about-features-grid">
             <div className="about-feature-card">
-              <div className="about-feature-icon">
-                <FaFlask />
-              </div>
+              <div className="about-feature-icon">🔬</div>
               <h3>Bilimsel Temel</h3>
               <p>
                 Tüm testlerimiz, MBTI, Big Five gibi uluslararası kabul görmüş 
@@ -52,19 +42,15 @@ export default function Hakkinda() {
               </p>
             </div>
             <div className="about-feature-card">
-              <div className="about-feature-icon">
-                <FaShieldAlt />
-              </div>
-              <h3>Gizlilik & Güvenlik</h3>
+              <div className="about-feature-icon">🛡️</div>
+              <h3>Gizlilik &amp; Güvenlik</h3>
               <p>
                 Test sonuçlarınız tamamen gizli tutulur. Verileriniz üçüncü 
                 taraflarla asla paylaşılmaz.
               </p>
             </div>
             <div className="about-feature-card">
-              <div className="about-feature-icon">
-                <FaUsers />
-              </div>
+              <div className="about-feature-icon">👥</div>
               <h3>Herkes İçin Erişilebilir</h3>
               <p>
                 Platformumuz tamamen ücretsizdir. Herkes kolayca 
@@ -72,9 +58,7 @@ export default function Hakkinda() {
               </p>
             </div>
             <div className="about-feature-card">
-              <div className="about-feature-icon">
-                <FaBrain />
-              </div>
+              <div className="about-feature-icon">🧠</div>
               <h3>Detaylı Analizler</h3>
               <p>
                 Her test sonunda kişilik profilinizi detaylı bir şekilde 
@@ -83,7 +67,6 @@ export default function Hakkinda() {
             </div>
           </div>
         </section>
-        {/* Bilgi Notu */}
         <section className="about-disclaimer">
           <div className="about-disclaimer-card">
             <h3>⚠️ Önemli Not</h3>
@@ -100,7 +83,6 @@ export default function Hakkinda() {
           padding: 3rem 0 5rem;
           min-height: 80vh;
         }
-        /* === Hero === */
         .about-hero {
           text-align: center;
           margin-bottom: 4rem;
@@ -136,7 +118,6 @@ export default function Hakkinda() {
           line-height: 1.75;
           margin: 0;
         }
-        /* === Misyon & Vizyon === */
         .about-mission-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -156,21 +137,8 @@ export default function Hakkinda() {
           box-shadow: var(--shadow-lg);
         }
         .about-mission-icon {
-          width: 52px;
-          height: 52px;
-          border-radius: var(--radius-lg);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.4rem;
-          color: white;
-          margin-bottom: 1.25rem;
-        }
-        .mission-icon-purple {
-          background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        }
-        .mission-icon-pink {
-          background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
         }
         .about-mission-card h2 {
           font-size: 1.35rem;
@@ -184,7 +152,6 @@ export default function Hakkinda() {
           line-height: 1.7;
           margin: 0;
         }
-        /* === Neden Biz === */
         .about-features {
           margin-bottom: 4rem;
         }
@@ -214,15 +181,7 @@ export default function Hakkinda() {
           background: rgba(255, 255, 255, 0.8);
         }
         .about-feature-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: var(--radius-md);
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-          color: var(--primary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.15rem;
+          font-size: 2rem;
           margin-bottom: 1rem;
         }
         .about-feature-card h3 {
@@ -237,7 +196,6 @@ export default function Hakkinda() {
           line-height: 1.65;
           margin: 0;
         }
-        /* === Disclaimer === */
         .about-disclaimer {
           max-width: 750px;
           margin: 0 auto;
@@ -261,7 +219,6 @@ export default function Hakkinda() {
           line-height: 1.7;
           margin: 0;
         }
-        /* === Responsive === */
         @media (max-width: 768px) {
           .about-hero h1 {
             font-size: 2rem;
