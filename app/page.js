@@ -12,7 +12,7 @@ const CATEGORIES = [
   { id: 'love', name: 'İlişkiler', icon: '❤️' },
   { id: 'history', name: 'Tarih', icon: '📜' },
   { id: 'sport', name: 'Spor', icon: '⚽' },
-  { id: 'mystery', name: 'Gizem', icon: '🔍' },
+  { id: 'psyc', name: 'Psikoloji', icon: '🔍' },
   { id: 'astro', name: 'Astroloji', icon: '🔮' },
 ];
 
@@ -35,7 +35,7 @@ export default function Home() {
           love: 'İlişkiler',
           history: 'Tarih',
           sport: 'Spor',
-          mystery: 'Gizem',
+          psyc: 'Psikoloji',
           astro: 'Astroloji'
         };
         const filtered = allQuizzes.filter(quiz => quiz.category === categoryMap[categoryId]);
